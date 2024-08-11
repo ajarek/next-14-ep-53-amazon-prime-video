@@ -30,11 +30,11 @@ const MobileNav = () => {
       >
         <Film  color='#2563eb' />
         <h1 className='font-semibold text-xl text-[#2563eb] capitalize '>
-          Prime Video
+         prime video
         </h1>
       </Link>
         </SheetHeader>
-        <div className="flex flex-col gap-4 mt-4">
+        <div className="flex flex-col gap-4 mt-4 text-gray-400">
         <Link
           href='/home'
           className={`flex items-center  text-xl hover:text-primary ${

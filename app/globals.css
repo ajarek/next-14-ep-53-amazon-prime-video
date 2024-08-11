@@ -67,6 +67,6 @@
     @apply bg-background text-foreground;
   }
   .active{
-    @apply bg-primary text-primary-foreground
+    @apply border-b-2 border-primary px-2 ;
   }
 }

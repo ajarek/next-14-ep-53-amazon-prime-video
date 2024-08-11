@@ -7,21 +7,21 @@ import { Film } from 'lucide-react'
 const Links = () => {
   const pathname = usePathname()
   return (
-    <div className='max-lg:hidden w-full flex items-center justify-between  '>
+    <div className='max-lg:hidden w-full flex items-center justify-between text-gray-400  '>
       <Link
         href='/'
         className='flex items-center gap-2 max-sm-gap-1'
       >
         <Film  color='#2563eb' />
         <h1 className='font-semibold text-xl text-[#2563eb] capitalize '>
-          Prime Video
+          prime video
         </h1>
       </Link>
 
       <div className='flex items-center gap-8 mr-4 '>
         <Link
           href='/home'
-          className={`flex items-center  text-xl hover:text-primary ${
+          className={`flex items-center  text-xl hover:text-primary   ${
             pathname === '/home' ? 'active ' : ''
           }`}
         >
