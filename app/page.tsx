@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { Film } from 'lucide-react'
-import Link from 'next/link'
+
 export default function Home() {
   return (
     <main className=" flex min-h-screen flex-col items-center justify-between  ">
@@ -34,18 +33,7 @@ export default function Home() {
       <p  className='w-1/2 max-lg:w-full text-xl tracking-wide max-lg:bg-[rgba(0,0,0,0.5)]'>The biggest movies and TV shows are always better on a big screen. Simply plug in your Amazon Fire TV Stick and stream on any HDTV. Press the voice button on the remote and say the name of the title you want to watch to find it in seconds.</p>
       <Button className="bg-[#2563eb] text-white hover:bg-[#3977fd]">Join Prime Annual at $24.99/month</Button>
       </div>
-      <div className="flex flex-col items-center gap-4 px-24 py-8  ">
-      <Link
-        href='/'
-        className='flex items-center gap-2 max-sm-gap-1'
-      >
-        <Film  color='#2563eb' />
-        <h1 className='font-semibold text-xl text-[#2563eb] capitalize '>
-          prime video
-        </h1>
-      </Link>
-      <div>© 1996 - 2024 Amazon.com, Inc. or its affiliates</div>
-      </div>
+      
      
     </main>
   );
