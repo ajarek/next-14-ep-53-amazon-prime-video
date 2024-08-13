@@ -1,38 +1,49 @@
-"use client";
-import { motion } from "framer-motion";
-import React from "react";
-import { ImagesSlider } from "@/components/ui/images-slider";
+'use client'
+import * as React from "react"
+import Autoplay from "embla-carousel-autoplay"
+
+import { Card, CardContent } from "@/components/ui/card"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
+
 import {SeriesData} from '@/data/data'
-import { X } from "lucide-react";
+import Image from "next/image"
 const Home=()=> {
-  const images = SeriesData.map((x,index)=>x.Series_Poster_one )
-  const title =  SeriesData.map((x,index)=>x.Series_Name)
-  const id = SeriesData.map((x,index)=>x.id)
+  const plugin = React.useRef(
+    Autoplay({ delay: 2000, stopOnInteraction: false })
+  )
+
   return (
-    <ImagesSlider className="h-[40rem]" images={images}>
-      <motion.div
-        initial={{
-          opacity: 0,
-          y: -80,
-        }}
-        animate={{
-          opacity: 1,
-          y: 0,
-        }}
-        transition={{
-          duration: 0.6,
-        }}
-        className="z-50 flex flex-col justify-center items-center"
-      >
-        <motion.p className="font-bold text-xl md:text-6xl text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 py-4">
-          {title.find((x,index,arr)=>index+1 == 1)}
-        </motion.p>
-        <button className="px-4 py-2 backdrop-blur-sm border bg-emerald-300/10 border-emerald-500/20 text-white mx-auto text-center rounded-full relative mt-4">
-          <span>Join now →</span>
-          <div className="absolute inset-x-0  h-px -bottom-px bg-gradient-to-r w-3/4 mx-auto from-transparent via-emerald-500 to-transparent" />
-        </button>
-      </motion.div>
-    </ImagesSlider>
-  );
+    <main className=" flex min-h-screen flex-col items-center justify-between p-8 ">
+    <Carousel
+      plugins={[plugin.current]}
+     className="w-full max-w-4xl   "
+      onMouseEnter={plugin.current.stop}
+      onMouseLeave={plugin.current.reset}
+    >
+      <CarouselContent>
+        {SeriesData.map((serie) => (
+          <CarouselItem key={serie.id}>
+            <div className="p-1">
+              <Card className=" ">
+                <CardContent className="relative flex aspect-video  items-center justify-center p-6 ">
+                  <Image src={serie.Series_Poster_one} alt="poster" fill={true} className="w-full h-full object-cover" />
+                  <div className="absolute z-10 w-full text-4xl font-semibold flex justify-center">{serie.Series_Name}</div>
+                </CardContent>
+              </Card>
+            </div>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+      <CarouselPrevious />
+      <CarouselNext />
+    </Carousel>
+    </main>
+  )
 }
 export default Home
