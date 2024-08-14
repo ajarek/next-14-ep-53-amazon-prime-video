@@ -1,5 +1,10 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+
+![iPhone-13-(iOS-15)-localhost (1)](https://github.com/user-attachments/assets/ec9587b8-0451-44d9-a6ae-cbe5c0ce43cf)
+![iPhone-13-(iOS-15)-localhost](https://github.com/user-attachments/assets/34ba7cb6-1089-481b-8395-29255dbb8810)
+
+
 ## Getting Started
 
 First, run the development server:
